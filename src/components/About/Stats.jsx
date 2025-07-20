@@ -1,31 +1,14 @@
 import { motion } from "framer-motion";
 const Stats = () => {
   const stats = [
-    {
-      value: "25+",
-      label: "Expert Instructors",
-      description: "Real-world industry experts.",
-    },
-    {
-      value: "1K+",
-      label: "Students Trained",
-      description: "Successful graduates in tech fields",
-    },
-
-    {
-      value: "200+",
-      label: "Successfull Projects",
-      description: "Completed with top NGOs and organizations.",
-    },
-    {
-      value: "95%",
-      label: "Success Rate",
-      description: "Students who successfully complete our programs.",
-    },
-  ];
+    { number: "5K+", label: "Students Enrolled" },
+    { number: "7+", label: "Years of Excellence" },
+    { number: "500+", label: "Training Modules" },
+    { number: "20+", label: "Global Reach" },
+  ]
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-indigo-50/50">
-      <div className="container mx-auto px-4">
+    <section className="py-24 bg-gradient-to-b from-white to-indigo-50/50 font-body">
+      <div className="container ">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +34,7 @@ const Stats = () => {
             >
               <div className="space-y-4">
                 <h3 className="text-3xl md:text-5xl font-bold text-primary">
-                  {stat.value}
+                  {stat.number}
                 </h3>
                 <p className="text-lg font-semibold text-gray-700">
                   {stat.label}

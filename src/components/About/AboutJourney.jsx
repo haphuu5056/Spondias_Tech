@@ -1,13 +1,13 @@
-
 import { motion } from "framer-motion";
+import { Badge } from "../ui/badge";
 
 export function AboutJourney() {
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative py-20 overflow-hidden font-body">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-white pointer-events-none" />
 
-      <div className="container mx-auto px-4">
+      <div className="container ">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Text Content */}
           <motion.div
@@ -17,18 +17,22 @@ export function AboutJourney() {
             transition={{ duration: 0.3 }}
             className="relative"
           >
-            <motion.span
-              className="text-primary font-semibold text-sm tracking-wider uppercase mb-3 block ml-1"
+            <motion.Badge
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.3, delay: 0.1 }}
             >
-              Our Journey
-            </motion.span>
+              <Badge
+                variant="solidPrimary"
+                className=" tracking-wide px-4 py-2  uppercase rounded-full "
+              >
+                Our Journey
+              </Badge>{" "}
+            </motion.Badge>
 
             <motion.h2
-              className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight"
+              className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 lg:leading-[3rem]"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -94,7 +98,7 @@ export function AboutJourney() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.3,  }}
+            transition={{ duration: 0.3 }}
             className="relative"
           >
             <div className="relative rounded-2xl overflow-hidden">

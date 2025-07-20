@@ -5,13 +5,14 @@ import { defineConfig } from "vite";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-
+  base: "./",
   server: {
     host: "0.0.0.0", // This allows access from external devices
     port: 5174, // You can change this to any port you prefer
   },
   resolve: {
     alias: {
+      // eslint-disable-next-line no-undef
       "@": path.resolve(__dirname, "./src"),
     },
   },

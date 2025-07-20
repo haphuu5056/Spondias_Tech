@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require("tailwindcss/defaultTheme");
 
@@ -5,9 +6,18 @@ export default {
   darkMode: ["class"],
   content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       lineHeight: {
-        11: "4rem",
+        10.5: "3rem",
+        11: "3.5rem",
+        11.5: "3.8rem",
         12: "4.5rem",
         13: "5.1rem",
         "extra-loose": "3.5rem",
@@ -15,6 +25,7 @@ export default {
       fontFamily: {
         body: ["Nunito", ...defaultTheme.fontFamily.sans],
         exo2: ['Exo 2"', ...defaultTheme.fontFamily.sans],
+        poppins: ["Poppins", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: {

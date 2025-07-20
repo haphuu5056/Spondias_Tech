@@ -1,25 +1,11 @@
 import { useState } from "react";
 import { logo } from "../../assets/images";
-
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "../ui/navigation-menu";
-import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { Button } from "../ui/button";
+import { navItems } from "../../constants";
 import { CiMenuFries } from "react-icons/ci";
-
-// Reordered navigation items to put Training after About
-
-const navItems = [
-  { title: "Home", href: "/" },
-  { title: "About", href: "/about" },
-  { title: "Courses", href: "/courses" },
-  { title: "Learning Events", href: "/learning-events" },
-  { title: "Contact", href: "/contact" },
-];
+import { IoClose } from "react-icons/io5";
+import { Link } from "react-router-dom";
+import { CustomButton } from "./CustomButton";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,63 +13,72 @@ export function Navbar() {
     typeof window !== "undefined" ? window.location.pathname : "/";
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-b-gray-100 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-      <div className="container mx-auto px-4 py-2 flex h-16 items-center justify-between">
-        <a href="/" className="flex items-center space-x-2">
-          <img src={logo} alt="Spondias Logo" width={200} height={80} />
+    <header className="fixed top-0 z-50 w-full backdrop-blur supports-[backdrop-filter]:bg-white/80 shadow-sm font-body">
+      <div className="container py-4 flex h-20 items-center justify-between gap-4">
+        <a href="/" className="flex items-center space-x-2 flex-shrink-0">
+          <img src={logo} alt="Spondias Logo" width={200} className="h-auto" />
         </a>
-
-        <nav className="hidden md:flex md:items-center md:space-x-8">
-          <NavigationMenu>
-            <NavigationMenuList>
-              {navItems.map((item) => (
-                <NavigationMenuItem key={item.href}>
-                  <NavigationMenuLink
-                    href={item.href}
-                    className={`group inline-flex h-10 w-max items-center justify-center rounded-md px-3 py-2 text-xl font-medium transition-colors hover:bg-gray-50 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 ${
-                      pathname === item.href ? "text-primary" : "text-zinc-800"
-                    }`}
-                  >
-                    {item.title}
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
-          <Button className="bg-primary hover:bg-sky-600">Get Started</Button>
+        <nav className="hidden md:flex md:items-center md:space-x-4 md:flex-grow md:justify-center">
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className={`px-3 py-2 rounded-md text-lg font-medium transition-colors hover:bg-blue-50 hover:text-primary ${
+                pathname === item.href
+                  ? "text-primary bg-blue-50"
+                  : "text-zinc-800"
+              }`}
+            >
+              {item.title}
+            </a>
+          ))}
         </nav>
-
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon">
-              <CiMenuFries size={24} />
-              <span className="sr-only">Toggle menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right">
-            <nav className="flex flex-col space-y-4 mt-6">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className={`text-lg font-medium hover:text-blue-600 ${
-                    pathname === item.href ? "text-primary" : ""
-                  }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.title}
-                </a>
-              ))}
-              <Button
-                className="w-full bg-setext-primary hover:bg-blue-600 mt-4"
-                onClick={() => setIsOpen(false)}
-              >
-                Get Started
-              </Button>
-            </nav>
-          </SheetContent>
-        </Sheet>
+        <div className="hidden md:flex items-center flex-shrink-0">
+          <CustomButton variant="solidPrimary" className="shadow-none">
+            Enroll Now
+          </CustomButton>
+        </div>
+        <div className="md:hidden">
+          <Button variant="ghost" size="icon" onClick={() => setIsOpen(true)}>
+            <CiMenuFries size={32} />
+            <span className="sr-only">Open menu</span>
+          </Button>
+        </div>
       </div>
+
+      {/* Mobile Fullscreen Menu */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-6 px-6 h-screen
+            bg-white transition-all duration-500 ease-in-out
+            animate-fade-in"
+        >
+          <button
+            onClick={() => setIsOpen(false)}
+            className="absolute top-6 right-6 text-2xl text-zinc-700 hover:text-black transition-colors duration-300"
+          >
+            <IoClose size={32} />
+            <span className="sr-only">Close menu</span>
+          </button>
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className={`text-xl font-semibold transition-colors duration-300 hover:text-blue-600 ${
+                pathname === item.href ? "text-primary" : "text-zinc-800"
+              }`}
+              onClick={() => setIsOpen(false)}
+            >
+              {item.title}
+            </a>
+          ))}
+          <Link to="/courses" className="w-full sm:w-auto">
+            <CustomButton variant="solidPrimary" className="w-full sm:w-auto">
+              Start Learning Now
+            </CustomButton>
+          </Link>
+        </div>
+      )}
     </header>
   );
 }

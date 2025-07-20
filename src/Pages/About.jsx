@@ -1,13 +1,13 @@
-import { AboutHero } from "../components/About/AboutHero";
-import { AboutJourney } from "../components/About/AboutJourney";
-import Stats from "../components/About/Stats";
-import { TeamSection } from "../components/About/TeamSection";
-import { Values } from "../components/About/Values";
-import CTA from "../components/Home/CTA";
+import { AboutHero } from "../components/about/AboutHero";
+import { AboutJourney } from "../components/about/AboutJourney";
+import Stats from "../components/about/Stats";
+import { TeamSection } from "../components/about/TeamSection";
+import { Values } from "../components/about/Values";
+import CTA from "../components/common/CTA";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-16">
       <AboutHero />
       <AboutJourney /> <Stats />
       <Values />

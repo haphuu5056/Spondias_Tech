@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Construction } from "lucide-react";
@@ -5,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const NotFound = () => {
   return (
-    <div className="py-10 flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+    <div className="py-10 pt-32 flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
       <div className="max-w-2xl w-full text-center">
         <motion.div
           initial={{ opacity: 0, y: -50 }}
@@ -39,10 +40,10 @@ const NotFound = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          <Link href="/">
+          <Link to="/">
             <Button
               size="lg"
-              className="bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300"
+              
             >
               <ArrowLeft className="mr-2 h-4 w-4" /> Back to Home
             </Button>
