@@ -104,8 +104,7 @@ const Contact = () => {
               <h4 className="text-lg font-semibold text-gray-800 mb-1">
                 Mogadishu, Somalia
               </h4>
-              <p className="text-gray-600 text-base">+252612929589</p>
-              <p className="text-gray-600 text-base">+252 61 123 4567</p>
+              <p className="text-gray-600 text-base">+252612019721</p>
             </div>
             {/* India */}
             <div className=" rounded-lg p-5 flex flex-col items-center shadow">

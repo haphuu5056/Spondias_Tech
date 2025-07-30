@@ -60,23 +60,21 @@ export function WhyChooseUs() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid lg:grid-cols-2 gap-16 items-start "
+          className="grid lg:grid-cols-2 gap-16 items-center sm:items-start "
         >
           <motion.div className="max-w-xl lg:pr-12 ">
             <Badge
               variant="solidPrimary"
               className=" tracking-wide px-4 py-2 mb-2 uppercase rounded-full "
             >
-              Why Choose spondias?
+              Why spondias?
             </Badge>
             <h2 className="text-4xl sm:text-5xl tracking-tight font-extrabold text-gray-900 mb-6 lg:leading-11">
-              Your Success is Our
-              <br />
-              <span className="text-primary"> Priority</span>
+            Why Choose
+              <span className="text-primary"> Spondias?</span>
             </h2>
             <p className="text-gray-700 text-lg mb-8 leading-relaxed ">
-              Discover what makes Spondias the preferred choice for
-              professionals looking to advance their careers in technology.
+             Our core portfolio includes Project Consulting, SAP, Gap Analysis, Corporate Training & Recruitment Solutions, catering to diverse industries globally.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/contact">
@@ -102,7 +100,7 @@ export function WhyChooseUs() {
             {whyChoose.map((feature, index) => (
               <motion.div
                 key={index}
-                className="group relative p-6 rounded-3xl bg-gradient-to-br from-blue-50 via-white to-blue-100 shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform font-body"
+                className="group relative p-6 rounded-3xl bg-gradient-to-br from-blue-50 via-white to-blue-50 shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform font-body"
               >
                 {/* Decorative gradient blob */}
                 <div className="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-tr from-blue-200 via-blue-100 to-white rounded-full blur-2xl opacity-40 pointer-events-none"></div>
@@ -111,9 +109,9 @@ export function WhyChooseUs() {
                 <div className="flex flex-col items-start gap-4 relative z-10">
                   <div className="relative">
                     <div
-                      className="rounded-xl p-4 bg-gradient-to-br from-blue-100 via-white to-blue-200 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300"
+                      className="rounded-xl p-2 bg-gradient-to-br from-blue-100 via-white to-blue-200 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300"
                     >
-                      <feature.icon className="w-8 h-8 text-primary transition-colors duration-300" />
+                      <feature.icon className="w-6 h-6 text-primary transition-colors duration-300" />
                     </div>
                   </div>
                   <div className="flex-1 mt-2">

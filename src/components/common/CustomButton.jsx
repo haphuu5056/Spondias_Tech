@@ -16,15 +16,15 @@ const CustomButton = React.forwardRef(
     ref
   ) => {
     const baseStyles =
-      "transition-all duration-200 flex items-center justify-center font-body text-lg px-8 py-6 rounded-full ";
+      "transition-all duration-200 flex items-center justify-center font-body text-lg  px-8 py-4 rounded-full ";
 
     const variantStyles = {
       default: " bg-gray-900 text-white hover:bg-gray-800",
       outline:
         "border-2 border-gray-900 bg-white text-gray-900 hover:bg-gray-900 hover:text-white",
-      solidPrimary: "px-8 py-6 text-lg font-semibold rounded-xl text-white",
+      solidPrimary: "bg-[#319BCB] hover:bg-[#2a87b5] text-white text-lg font-medium rounded-full shadow hover:shadow transition-all duration-300 group",
       outlinePrimary:
-        "border-2 border-gray-800 hover:border-[#319bcb] hover:text-primary  hover:bg-gray-50 font-semibold rounded-xl bg-transparent text-black shadow-none",
+        "border-2 border-gray-800 hover:border-[#319bcb] hover:text-primary  hover:bg-gray-50 font-semibold rounded-full bg-transparent text-black shadow",
     };
 
     return (

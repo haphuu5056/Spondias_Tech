@@ -12,7 +12,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 const Testimonials = () => {
   return (
     <section className="py-16 px-4 bg-gray-50">
-      <div className="container ">
+      <div className="max-w-7xl mx-auto px-4 ">
         <div className="text-center  mb-16">
           <Badge
             variant="solidPrimary"

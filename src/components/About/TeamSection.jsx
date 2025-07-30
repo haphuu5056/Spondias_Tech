@@ -1,7 +1,5 @@
 import { teamMembers } from "../../constants";
 import { motion } from "framer-motion";
-import { Twitter, Instagram, Facebook } from "lucide-react";
-import { Link } from "react-router-dom";
 import { Badge } from "../ui/badge";
 
 export function TeamSection() {
@@ -53,7 +51,8 @@ export function TeamSection() {
                 {member.name}
               </h3>
               <p className="text-gray-500 mb-4">{member.role}</p>
-              <div className="flex items-center justify-center gap-4">
+              {/* <p>{member.bio}</p> */}
+              {/* <div className="flex items-center justify-center gap-4">
                 <div className="flex items-center gap-2">
                   <Link
                     to={member.social.twitter}
@@ -74,7 +73,7 @@ export function TeamSection() {
                     <Facebook className="w-4 h-4 text-gray-700" />
                   </Link>
                 </div>
-              </div>
+              </div> */}
             </motion.div>
           ))}
         </div>

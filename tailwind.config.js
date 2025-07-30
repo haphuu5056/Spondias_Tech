@@ -25,7 +25,7 @@ export default {
       fontFamily: {
         body: ["Nunito", ...defaultTheme.fontFamily.sans],
         exo2: ['Exo 2"', ...defaultTheme.fontFamily.sans],
-        poppins: ["Poppins", ...defaultTheme.fontFamily.sans],
+        poppins: ["Tilt Neon", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: {

@@ -8,10 +8,12 @@ import CoursesPage from "./Pages/Courses";
 import CoursePage from "./Pages/CourseInfo";
 import NotFound from "./Pages/NotFound";
 import { Toaster } from "@/components/ui/sonner";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter >
+    <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

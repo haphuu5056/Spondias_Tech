@@ -11,7 +11,7 @@ import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
 const CoursesCard = ({ course }) => {
   return (
-    <Card className=" relative overflow-hidden border-0 shadow-lg  transition-all duration-300 transform  bg-white">
+    <Card className=" relative overflow-hidden border-0 shadow-lg rounded-bl-[4rem]  transition-all duration-300 transform  bg-white">
       {/* Badge */}
       {course.badge && (
         <div className="absolute top-4 left-4 z-10">
@@ -40,12 +40,12 @@ const CoursesCard = ({ course }) => {
         </CardTitle>
       </CardHeader>
 
-      <CardContent className="space-y-4 font-poppins">
-        <CardDescription className="text-gray-600 text-sm leading-relaxed">
+      <CardContent className=" font-body">
+        <CardDescription className="text-gray-600 text-sm leading-relaxed mb-4">
           {course.description}
         </CardDescription>
 
-        <div className="flex items-center justify-between text-sm font-medium text-gray-700 mt-4">
+        <div className="flex items-center justify-between text-sm font-medium text-gray-700 mb-4">
           <div className="flex items-center gap-1">
             <Clock className="w-3 h-3" />
             <span>{course.duration}</span>
@@ -56,18 +56,18 @@ const CoursesCard = ({ course }) => {
           </div>
         </div>
 
-        <div className="text-sm">
+        <div className="text-sm mb-4">
           <span className="font-semibold text-gray-700">Level: </span>
           <span className="text-gray-600">{course.level}</span>
         </div>
 
         {course.financing && (
-          <div className="text-sm text-[#319bcb] font-semibold">
+          <div className="text-sm text-[#319bcb] font-semibold mb-4">
             {course.financing}
           </div>
         )}
 
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 mb-8">
           {course.tags.map((tag, index) => (
             <Badge
               key={index}
@@ -79,12 +79,17 @@ const CoursesCard = ({ course }) => {
           ))}
         </div>
 
-        <Link to={`/courses/${course.slug}`} className="mt-4 ">
-          <Button className="w-full bg-black hover:bg-[#319bcb] text-white font-semibold py-3 rounded-xl transition-all duration-300 group-hover:bg-[#319bcb] flex items-center justify-center gap-2 mt-4">
-            Learn More
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+        <div className="flex justify-end ">
+          <Button
+            asChild
+            className="bg-black hover:bg-[#319bcb] text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 group-hover:bg-[#319bcb] inline-flex items-center justify-center gap-2 w-fit"
+          >
+            <Link to={`/courses/${course.slug}`}>
+              Enroll Now
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
           </Button>
-        </Link>
+        </div>
       </CardContent>
     </Card>
   );

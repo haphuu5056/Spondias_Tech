@@ -4,38 +4,39 @@ import { Button } from "../ui/button";
 import { navItems } from "../../constants";
 import { CiMenuFries } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { CustomButton } from "./CustomButton";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname =
-    typeof window !== "undefined" ? window.location.pathname : "/";
-
+  const navLinkClass =
+    "p-2 relative text-gray-900 font-medium transition-colors hover:text-[#319BCB] hover:underline hover:underline-offset-4 hover:decoration-2 hover:decoration-[#319BCB]";
+  const activeClass =
+    "text-primary underline underline-offset-4 decoration-2 decoration-[#319BCB]";
   return (
     <header className="fixed top-0 z-50 w-full backdrop-blur supports-[backdrop-filter]:bg-white/80 shadow-sm font-body">
       <div className="container py-4 flex h-20 items-center justify-between gap-4">
-        <a href="/" className="flex items-center space-x-2 flex-shrink-0">
+        <Link to="/" className="flex items-center space-x-2 flex-shrink-0">
           <img src={logo} alt="Spondias Logo" width={200} className="h-auto" />
-        </a>
+        </Link>
         <nav className="hidden md:flex md:items-center md:space-x-4 md:flex-grow md:justify-center">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className={`px-3 py-2 rounded-md text-lg font-medium transition-colors hover:bg-blue-50 hover:text-primary ${
-                pathname === item.href
-                  ? "text-primary bg-blue-50"
-                  : "text-zinc-800"
-              }`}
+          {navItems.map((item, index) => (
+            <NavLink
+              key={index}
+              to={item.href}
+              className={({ isActive }) =>
+                `${navLinkClass} ${isActive ? activeClass : ""}`
+              }
             >
               {item.title}
-            </a>
+            </NavLink>
           ))}
         </nav>
         <div className="hidden md:flex items-center flex-shrink-0">
-          <CustomButton variant="solidPrimary" className="shadow-none">
+          <CustomButton as child variant="solidPrimary" className="shadow-none">
+            <Link to="/courses">
             Enroll Now
+            </Link>
           </CustomButton>
         </div>
         <div className="md:hidden">
@@ -60,17 +61,16 @@ export function Navbar() {
             <IoClose size={32} />
             <span className="sr-only">Close menu</span>
           </button>
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className={`text-xl font-semibold transition-colors duration-300 hover:text-blue-600 ${
-                pathname === item.href ? "text-primary" : "text-zinc-800"
-              }`}
-              onClick={() => setIsOpen(false)}
+          {navItems.map((item, index) => (
+            <NavLink
+              key={index}
+              to={item.href}
+              className={({ isActive }) =>
+                `${navLinkClass} ${isActive ? activeClass : ""}`
+              }
             >
               {item.title}
-            </a>
+            </NavLink>
           ))}
           <Link to="/courses" className="w-full sm:w-auto">
             <CustomButton variant="solidPrimary" className="w-full sm:w-auto">

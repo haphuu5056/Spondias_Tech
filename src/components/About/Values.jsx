@@ -1,6 +1,26 @@
 import { motion } from "framer-motion";
 import { Target, Users, BarChart } from "lucide-react";
 export const Values = () => {
+  const visionMission = [
+    {
+      title: "Vision",
+      description:
+        "Spondias vision is to deliver effective and efficient solutions to our clients and to achieve an outstanding quality of work which in turn contributes towards the success of their organization.",
+      icon: <Target className="w-6 h-6" />,
+    },
+    {
+      title: "Mission",
+      description:
+        "Spondias' mission: Identify client skill gaps, analyze root causes, and recommend solutions. Enhance project productivity, meeting deadlines for overall organizational success.",
+      icon: <Users className="w-6 h-6" />,
+    },
+    {
+      title: "Values",
+      description:
+        "Spondias, a multicultural IT and Mobile App development company, delivers cost-effective solutions for diverse business needs, serving customers with versatile products and services.",
+      icon: <BarChart className="w-6 h-6" />,
+    },
+  ];
   return (
     <section className="py-24 bg-white font-body">
       <div className="container  max-w-5xl">
@@ -20,26 +40,7 @@ export const Values = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-12">
-          {[
-            {
-              icon: <Target className="w-6 h-6" />,
-              title: "Mission",
-              description:
-                "To empower individuals with cutting-edge tech skills for successful careers in the digital age.",
-            },
-            {
-              icon: <Users className="w-6 h-6" />,
-              title: "Vision",
-              description:
-                "To be the leading force in transforming tech education and creating the next generation of innovators.",
-            },
-            {
-              icon: <BarChart className="w-6 h-6" />,
-              title: "Impact",
-              description:
-                "Making quality tech education accessible and creating positive change in the technology industry.",
-            },
-          ].map((item, index) => (
+          {visionMission.map((item, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -63,4 +64,4 @@ export const Values = () => {
       </div>
     </section>
   );
-}
+};

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { footerLogo } from '../../assets/images/index';
 import { Facebook, Twitter, Linkedin } from 'lucide-react';
 import { toast } from "sonner";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -29,15 +30,15 @@ const Footer = () => {
             Empowering careers through expert training and innovative learning.
           </p>
           <div className="flex space-x-4 mt-6">
-            <a href="https://www.facebook.com/spondias1" className="text-gray-400 hover:text-[#319bcb] transition-colors duration-200">
+            <Link to="https://www.facebook.com/spondias1" className="text-gray-400 hover:text-[#319bcb] transition-colors duration-200">
               <Facebook className="w-6 h-6" />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-[#319bcb] transition-colors duration-200">
+            </Link>
+            <Link to="#" className="text-gray-400 hover:text-[#319bcb] transition-colors duration-200">
               <Twitter className="w-6 h-6" />
-            </a>
-            <a href="https://www.linkedin.com/company/spondias/posts/?feedView=all" className="text-gray-400 hover:text-[#319bcb] transition-colors duration-200">
+            </Link>
+            <Link to="https://www.linkedin.com/company/spondias/posts/?feedView=all" className="text-gray-400 hover:text-[#319bcb] transition-colors duration-200">
               <Linkedin className="w-6 h-6" />
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -47,12 +48,11 @@ const Footer = () => {
           <ul className="space-y-3">
             {quickLinks.map((link) => (
               <li key={link.id}>
-                <a
-                  href={link.href}
+                <Link to={link.href}
                   className="hover:text-[#319bcb] transition-colors text-base text-gray-400"
                 >
                   {link.title}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

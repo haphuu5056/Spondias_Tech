@@ -1,4 +1,4 @@
-import { per1, per2, per3, per4, per5, per6 } from "../assets/images";
+import { per2, per3, per4, per5, per6, per7 } from "../assets/images";
 import {
   Users,
   Code,
@@ -744,18 +744,18 @@ export const quickLinks = [
     title: "Courses",
     href: "/courses",
   },
-  {
-    id: 4,
-    title: "Privacy Policy",
-    href: "/privacy-policy",
-  },
+  // {
+  //   id: 4,
+  //   title: "Privacy Policy",
+  //   href: "/privacy-policy",
+  // },
 ];
 export const teamMembers = [
   {
     name: "Nabil Osman",
     role: "Chief Executive Officer",
     image: per4,
-    bio: "Dedicated leader with a vision to transform tech education in Somalia.",
+    bio: "As the Chief Strategy Officer, I shape visionary operations, fostering synergy and growth across diverse geographical regions.",
     social: {
       linkedin: "#",
       twitter: "#",
@@ -764,9 +764,9 @@ export const teamMembers = [
   },
 
   {
-    name: "Abdirahman Abdirashid",
-    role: "Lead Developer",
-    image: per3,
+    name: "Martin",
+    role: "Chief Development Officer",
+    image: per2,
     bio: "Innovator specializing in building scalable and robust systems.",
     social: {
       linkedin: "#",
@@ -775,9 +775,9 @@ export const teamMembers = [
     },
   },
   {
-    name: "Hafsa Abdullahi",
-    role: "Web Developer",
-    image: per2,
+    name: "Robbert Willis",
+    role: "MD-UK",
+    image: per3,
     bio: "Skilled web developer focused on creating user-friendly web solutions.",
     social: {
       linkedin: "#",
@@ -786,9 +786,9 @@ export const teamMembers = [
     },
   },
   {
-    name: "Abdimalik Abdullahi",
-    role: "Curriculum Designer",
-    image: per1,
+    name: "Asad",
+    role: "HR Manager",
+    image: per7,
     bio: "Creative educator focused on designing impactful learning experiences.",
     social: {
       linkedin: "#",
